@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Todo List</title>
+		<link rel="stylesheet" href="./style.css" />
+		<link rel="stylesheet" href="./assets/css/pop-up.css" />
+		<link rel="shortcut icon" href="./assets/img/logo.jpg" type="image/x-icon" />
+	</head>
+	<body>
+		<div class="pop-up">
+			<p id="message"></p>
+		</div>
+		<header>
+			<h1 id="title">Todo List</h1>
+			<img id="menu" src="./assets/img/menu.png" alt="menu" />
+			<div class="sections">
+				<p id="home">Home</p>
+				<p id="finished">Finished Tasks</p>
+				<p id="deleted">Deleted Tasks</p>
+			</div>
+		</header>
+		<div class="center">
+			<button id="create">Create task</button>
+			<form id="validate">
+				<input
+					id="type"
+					type="text"
+					placeholder="Type your new task here !"
+					autocomplete="off"
+				/>
+			</form>
+		</div>
+		<div class="tasks">
+			<ol></ol>
+		</div>
+
+		<footer>
+			<a href="https://twitter.com/" target="_blank">
+				<img
+					class="social-media"
+					id="twitter"
+					src="./assets/img/twitterlogo.png"
+					alt="Twitter Logo"
+					href="https://twitter.com/"
+				/>
+			</a>
+
+			<a href="https://instagram.com/" target="_blank">
+				<img
+					class="social-media"
+					id="instagram"
+					src="./assets/img/instagramlogo.png"
+					alt="Instagram Logo"
+				/>
+			</a>
+
+			<a href="https://facebook.com/" target="_blank">
+				<img
+					class="social-media"
+					id="facebook"
+					src="./assets/img/facebooklogo.png"
+					alt="Facebook Logo"
+				/>
+			</a>
+		</footer>
+		<script src="./index.js" type="module"></script>
+	</body>
+</html>

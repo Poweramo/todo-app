@@ -1,0 +1,176 @@
+/* TODO: Add animation under text of sections (a little white line that move from right to left) */
+
+@font-face {
+	font-family: main-font;
+	src: url(./assets/fonts/Mukta-Regular.ttf);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	color: white;
+}
+
+:root {
+	--margin: 5px;
+	--padding: 5px;
+	--border-radius: 5px;
+}
+
+body {
+	font-family: main-font;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+	background: black;
+}
+
+header {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+	grid-template-areas:
+		". title myMenu"
+		". . sections";
+}
+
+#title {
+	text-align: center;
+	margin: var(--margin) 0;
+	grid-area: title;
+}
+
+#menu {
+	height: 40px;
+	width: 40px;
+	cursor: pointer;
+	grid-area: myMenu;
+	margin-left: auto;
+	margin-top: 15px;
+	margin-right: 15px;
+}
+
+.turn-menu {
+	rotate: 90deg;
+}
+
+.show-menu {
+	grid-template-rows: 1fr 100px;
+}
+
+.sections {
+	display: none;
+	height: 200px;
+	width: 300px;
+	/* margin: var(--margin); */
+	grid-area: sections;
+}
+
+.show-sections {
+	display: block;
+	margin-top: 20px;
+	margin-left: 200px;
+}
+
+#home,
+#finished,
+#deleted {
+	height: 30px;
+	border: 1px solid white;
+	border-radius: 5%;
+	padding: var(--padding);
+	text-align: center;
+	cursor: pointer;
+}
+
+.center {
+	display: grid;
+	grid-template-columns: 1fr;
+}
+
+#create {
+	margin: var(--margin) auto;
+	padding: var(--padding);
+	background: white;
+	color: black;
+	border-radius: var(--border-radius);
+	cursor: pointer;
+	height: 40px;
+	width: 100px;
+	font-family: main-font;
+}
+
+#create:hover {
+	opacity: 0.8;
+}
+
+#validate {
+	text-align: center;
+}
+
+#type {
+	display: none;
+	margin: var(--margin) auto;
+	padding: var(--padding);
+	border: 2px solid white;
+	border-radius: var(--border-radius);
+	width: 500px;
+	height: 30px;
+	font-size: 1.2rem;
+	background: black;
+}
+
+#type:focus {
+	outline: none;
+}
+
+.tasks {
+	min-height: 100px;
+	max-height: 430px;
+	margin: var(--margin);
+	padding: var(--padding);
+}
+
+li {
+	list-style-position: inside;
+	font-size: 1.5rem;
+}
+
+#checkmark {
+	height: 30px;
+	width: 30px;
+	cursor: pointer;
+	transform: translateY(5px);
+}
+
+#deletemark {
+	height: 20px;
+	width: 20px;
+	cursor: pointer;
+}
+
+footer {
+	height: 100px;
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	margin: var(--margin);
+	padding: var(--padding);
+}
+
+a,
+.social-media {
+	height: 50px;
+	width: 50px;
+	cursor: pointer;
+}
+
+#twitter {
+	height: 60px;
+	width: 60px;
+}
+
+.show-type {
+	display: inline-block;
+}

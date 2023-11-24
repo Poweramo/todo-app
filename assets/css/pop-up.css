@@ -1,0 +1,142 @@
+@font-face {
+	font-family: main-font;
+	src: url(../fonts/Mukta-Regular.ttf);
+}
+
+.pop-up {
+	position: absolute;
+	border: 2px solid black;
+	border-radius: 20px;
+	height: 200px;
+	width: 300px;
+	background: gray;
+	opacity: 100%;
+	z-index: 1;
+	top: -50%;
+	left: 50%;
+	transform: translate(-50%, 50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+}
+
+#message {
+	color: white;
+	opacity: 1;
+	font-family: main-font;
+	font-size: 1.2rem;
+}
+
+.show-pop-up {
+	animation: pop-up 10s ease-in-out;
+}
+
+@keyframes pop-up {
+	0% {
+		top: -40%;
+		left: 50%;
+		transform: translate(-50%, 40%);
+	}
+	5% {
+		top: -30%;
+		left: 50%;
+		transform: translate(-50%, 30%);
+	}
+	10% {
+		top: -20%;
+		left: 50%;
+		transform: translate(-50%, 20%);
+	}
+	15% {
+		top: -10%;
+		left: 50%;
+		transform: translate(-50%, 10%);
+	}
+	20% {
+		top: 0%;
+		left: 50%;
+		transform: translate(-50%, 0%);
+	}
+	25% {
+		top: 10%;
+		left: 50%;
+		transform: translate(-50%, -10%);
+	}
+	30% {
+		top: 20%;
+		left: 50%;
+		transform: translate(-50%, -20%);
+	}
+	35% {
+		top: 30%;
+		left: 50%;
+		transform: translate(-50%, -30%);
+	}
+	40% {
+		top: 40%;
+		left: 50%;
+		transform: translate(-50%, -40%);
+	}
+	45% {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	50% {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	55% {
+		top: 40%;
+		left: 50%;
+		transform: translate(-50%, -40%);
+	}
+	60% {
+		top: 30%;
+		left: 50%;
+		transform: translate(-50%, -30%);
+	}
+	65% {
+		top: 20%;
+		left: 50%;
+		transform: translate(-50%, -20%);
+	}
+	70% {
+		top: 10%;
+		left: 50%;
+		transform: translate(-50%, -10%);
+	}
+	75% {
+		top: 0%;
+		left: 50%;
+		transform: translate(-50%, 0%);
+	}
+	80% {
+		top: -10%;
+		left: 50%;
+		transform: translate(-50%, 10%);
+	}
+	85% {
+		top: -20%;
+		left: 50%;
+		transform: translate(-50%, 20%);
+	}
+	90% {
+		top: -30%;
+		left: 50%;
+		transform: translate(-50%, 30%);
+	}
+	95% {
+		top: -40%;
+		left: 50%;
+		transform: translate(-50%, 40%);
+	}
+	100% {
+		top: -50%;
+		left: 50%;
+		transform: translate(-50%, 50%);
+	}
+}
