@@ -141,12 +141,14 @@ li {
 	width: 30px;
 	cursor: pointer;
 	transform: translateY(5px);
+	margin-left: 10px;
 }
 
 #deletemark {
 	height: 20px;
 	width: 20px;
 	cursor: pointer;
+	margin-left: 10px;
 }
 
 footer {

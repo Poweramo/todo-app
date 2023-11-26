@@ -1,4 +1,8 @@
-// TODO: Fix problem (when you create a task, the first one disappear)
+// ! Changing document.etc to const element = ...
+// Fix:
+/* In the taskList.childNodes table, 
+there is the tasks and some blank text, 
+which makes the deleting operation not accurate */
 // TODO: adding save finished tasks
 
 const root = document.querySelector(":root");
@@ -8,15 +12,15 @@ const sections = document.querySelector(".sections");
 const createElement = document.getElementById("create");
 const typeElement = document.getElementById("type");
 const validateElement = document.getElementById("validate");
-const taskList = document.querySelector("ol");
+const taskList = document.querySelector(".tasks");
 let task;
 let finishedTask;
 
 import { showPopUp } from "./assets/js/pop-up.js";
 
 for (let i = 0; i < localStorage.length; i++) {
-	let item1 = localStorage.getItem(`task${i}`);
-	taskList.innerHTML += `<li>${item1} <img id="checkmark" src="./assets/img/checkmark.png"> <img id="deletemark" src="./assets/img/deletemark.png"> </li>`;
+	let item = localStorage.getItem(`task:${Object.values(localStorage)[i]}`);
+	taskList.innerHTML += `<li>${item}<img id="checkmark" src="./assets/img/checkmark.png"><img id="deletemark" src="./assets/img/deletemark.png"></li> `;
 }
 
 createElement.addEventListener("click", () => {
@@ -34,20 +38,19 @@ typeElement.addEventListener("input", (e) => {
 
 validateElement.addEventListener("submit", (e) => {
 	e.preventDefault();
-	localStorage.setItem(`task${localStorage.length}`, task);
+	localStorage.setItem(`task:${task}`, task);
 	taskList.innerHTML += `<li>${task} <img id="checkmark" src="./assets/img/checkmark.png"> <img id="deletemark" src="./assets/img/deletemark.png"> </li>`;
 	typeElement.style = "display: none;";
-	location.reload();
 });
 
 for (let i = 0; i < localStorage.length; i++) {
 	let deleteMark = document.querySelectorAll("#deletemark");
 	let finishedMark = document.querySelectorAll("#checkmark");
-	let item = taskList.childNodes[i];
-	item.addEventListener("click", (e) => {
+
+	taskList.addEventListener("click", (e) => {
 		if (e.target === deleteMark[i] || e.target === finishedMark[i]) {
-			localStorage.removeItem(`task${i}`);
-			item.style.display = "none";
+			localStorage.removeItem(`task:${taskList.childNodes[i].textContent.slice("   ")}`);
+			document.querySelectorAll("li")[i].style.display = "none";
 		}
 	});
 }
